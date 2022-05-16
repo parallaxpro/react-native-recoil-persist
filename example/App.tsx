@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactNativeRecoilPersist, {ReactNativeRecoilPersistGate} from '../src';
-import AsyncStorage from '@react-native-community/async-storage';
-import {View, Text, TouchableOpacity, ActivityIndicator} from 'react-native';
-import {atom, RecoilRoot, useRecoilState} from 'recoil';
+import ReactNativeRecoilPersist, { ReactNativeRecoilPersistGate } from '../src';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { atom, RecoilRoot, useRecoilState } from 'recoil';
 
 const testAtom = atom({
   default: 'I am a test',
@@ -28,8 +28,8 @@ const TestScreen = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text style={{marginBottom: 10}}>{test}</Text>
-      <Text style={{marginBottom: 20}}>{test2}</Text>
+      <Text style={{ marginBottom: 10 }}>{test}</Text>
+      <Text style={{ marginBottom: 20 }}>{test2}</Text>
       <TouchableOpacity
         style={{
           backgroundColor: 'honeydew',
@@ -72,7 +72,7 @@ const TestScreen = () => {
 
 export default () => {
   return (
-    <View style={{flex: 1, backgroundColor: 'orangered'}}>
+    <View style={{ flex: 1, backgroundColor: 'orangered' }}>
       <RecoilRoot>
         <ReactNativeRecoilPersistGate
           store={ReactNativeRecoilPersist}

@@ -1,4 +1,4 @@
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AtomEffect, DefaultValue } from "recoil";
 
 interface StorageInterface {
@@ -20,7 +20,7 @@ export class ReactNativeRecoilPersist {
   constructor(
     private storageHandlers: StorageInterface = defaultStorageInterface,
     private key: string = defaultLocalStorageKey
-  ) {}
+  ) { }
 
   public init = async () => {
     const localCache = await this.storageHandlers.getItem(this.key);
